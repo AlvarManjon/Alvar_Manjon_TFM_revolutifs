@@ -1,3 +1,8 @@
+#' Calculate the rsfs matrix for every sample and every polymorphic site
+#'
+#' @param vcf A vcf file
+#'
+#' @return The rsfs matrix
 #' @export
 rsfsmatrix <- function(vcf) {
 
