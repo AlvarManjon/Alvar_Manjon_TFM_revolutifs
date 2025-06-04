@@ -2,7 +2,7 @@
 % Please edit documentation in R/rsfsmatrix.R
 \name{rsfsmatrix}
 \alias{rsfsmatrix}
-\title{Calculate the rsfs matrix for every sample and every polymorphic site}
+\title{Calculate the rsfs matrix for every subsample and every polymorphic site}
 \usage{
 rsfsmatrix(vcf)
 }
@@ -13,5 +13,5 @@ rsfsmatrix(vcf)
 The rsfs matrix
 }
 \description{
-Calculate the rsfs matrix for every sample and every polymorphic site
+Calculate the rsfs matrix for every subsample and every polymorphic site
 }

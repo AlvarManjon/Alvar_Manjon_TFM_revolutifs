@@ -11,7 +11,7 @@ rtheta(vcf, omega_type = "S", folded = FALSE, subsample = "all")
 
 \item{omega_type}{The model to follow for omega ("S", "pi", "xi1", "H"). "S" is set as default.}
 
-\item{folded}{A logical variable. If true the sfs is considered as folded (no knowledge over which is the alternative variant).}
+\item{folded}{A logical variable. If true the rsfs is considered as folded (no knowledge over which is the alternative variant).}
 
 \item{subsample}{The name of the subsample to compute theta for ("example"). "all" set as default.}
 }
