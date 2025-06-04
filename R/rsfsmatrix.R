@@ -74,7 +74,7 @@ notmissing_vector <- function(vcf) {
 
 
 
-#' Calculate the rsfs matrix for every sample and every polymorphic site
+#' Calculate the rsfs matrix for every subsample and every polymorphic site
 #'
 #' @param vcf A vcf file
 #'

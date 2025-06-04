@@ -24,7 +24,7 @@ sfsmatrix <- function(vcf, cont_tab = FALSE) {
 
   #The column names are changed to add an f so they look like: fi for each frequency
 
-  colnames(xi) <- 'absolute frequency'
+  colnames(xi) <- 'absolute_frequency'
   for(i in 1:length(rownames(xi))) {
     rownames(xi)[i] <- paste0('f', rownames(xi)[i])
   }
@@ -37,5 +37,30 @@ sfsmatrix <- function(vcf, cont_tab = FALSE) {
   else {
     return(xi)                     #Returns the contingency table of the sfs spectrum as a matrix
   }
+
+}
+
+
+
+#' Plot the Site Frequency Spectrum into a barplot, representing the times an alternative allele frequency appears.
+#'
+#' @param vcf A vcf file
+#'
+#' @returns The barplot of SFS
+#' @importFrom rlang .data
+#' @export
+sfsbarplot <- function(vcf) {
+
+  matriz <- sfsmatrix(vcf, cont_tab = TRUE)
+  df <- as.data.frame(matriz)
+  df$Category <- rownames(matriz)
+  df$Category <- factor(df$Category, levels = df$Category)
+
+  plot <- ggplot2::ggplot(df, ggplot2::aes(x = .data$Category, y = .data$absolute_frequency)) +
+    ggplot2::geom_bar(stat = "identity", fill = "lightblue", color = "blue") +
+    ggplot2::theme_minimal() +
+    ggplot2::labs(title = "Site Frequency Spectrum", x = "Alternative allele frequency", y = "Counts")
+
+  return(plot)
 
 }
